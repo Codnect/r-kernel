@@ -33,12 +33,12 @@ multiboot_header:
     MULTIBOOT_HEADER_FLAGS          equ	MULTIBOOT_PAGE_ALIGN | MULTIBOOT_MEMORY_INFO
     ; Checksum the result
     MULTIBOOT_CHECKSUM              equ	-(MULTIBOOT_BOOT_HEADER_MAGIC + MULTIBOOT_HEADER_FLAGS)
-	; Load the headers into the binary image.
-	dd MULTIBOOT_BOOT_HEADER_MAGIC  ; magic
-	dd MULTIBOOT_HEADER_FLAGS       ; flags
-	dd MULTIBOOT_CHECKSUM           ; checksum
-	dd 0x00000000                   ; header_addr   (multiboot header address)
-	dd 0x00000000                   ; load_addr     (the physical address of the beginning of the text segment)
+    ; Load the headers into the binary image.
+    dd MULTIBOOT_BOOT_HEADER_MAGIC  ; magic
+    dd MULTIBOOT_HEADER_FLAGS       ; flags
+    dd MULTIBOOT_CHECKSUM           ; checksum
+    dd 0x00000000                   ; header_addr   (multiboot header address)
+    dd 0x00000000                   ; load_addr     (the physical address of the beginning of the text segment)
     dd 0x00000000                   ; load_end_addr (the physical address of the end of the data segment)
     dd 0x00000000                   ; bss_end_addr  (the physical address of the end of the bss segment)
     dd 0x00000000                   ; entry_addr    (kernel start point address)
